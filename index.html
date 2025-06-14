@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditi Shinde | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+
+  <!-- Particle.js Container -->
+  <div id="particles-js"></div>
+
+  <!-- Toggle Theme Button -->
+  <button id="toggleMode">Toggle Theme</button>
+
+  <!-- Navigation Buttons -->
+  <nav id="floating-nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#" id="backToTop">⬆</a>
+  </nav>
+
+  <!-- Profile Section -->
+  <header class="reveal">
+    <center>
+      <img src="myphoto.jpg" alt="Aditi Shinde" class="profile-photo" />
+    </center>
+    <h1><span id="typed"></span></h1>
+    <p>Aspiring AI/ML Engineer | Web Developer</p>
+    <center>
+      <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
+    </center>
+  </header>
+
+  <!-- About Me -->
+  <section id="about" class="reveal">
+    <h2>About Me</h2>
+    <p>I am a second-year AIML engineering student passionate about building websites, learning machine learning, and developing smart solutions.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="reveal">
+    <h2>My Skills</h2>
+    <div class="skills-bar">
+      <label>HTML/CSS</label><div class="bar" style="--level:90%"></div>
+      <label>JavaScript</label><div class="bar" style="--level:80%"></div>
+      <label>Python</label><div class="bar" style="--level:85%"></div>
+      <label>C/C++</label><div class="bar" style="--level:70%"></div>
+      <label>ML Basics</label><div class="bar" style="--level:60%"></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="reveal">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <i class="fas fa-gamepad"></i>
+        <h3>Tic Tac Toe</h3>
+        <p>Dark mode, sound effects</p>
+      </div>
+      <div class="project-card">
+        <i class="fas fa-wallet"></i>
+        <h3>Finance Manager</h3>
+        <p>AI-based expense prediction</p>
+      </div>
+      <div class="project-card">
+        <i class="fas fa-home"></i>
+        <h3>Smart Home</h3>
+        <p>IoT automation using sensors</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section id="contact" class="reveal">
+  <h2>📬 Email & Phone</h2>
+  <p><strong>Email:</strong> <a href="mailto:aditishinde9585@gmail.com">aditishinde9585@gmail.com</a></p>
+  <p><strong>Phone:</strong> 8169364495</p>
+</section>
+
+
+  <footer>
+    <p>© 2025 Aditi Shinde | Portfolio Website</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Typing animation
+    new Typed("#typed", {
+      strings: ["Hello, I'm Aditi Shinde"],
+      typeSpeed: 60,
+      showCursor: false,
+    });
+
+    // Scroll Reveal
+    ScrollReveal().reveal('.reveal', {
+      delay: 200,
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true
+    });
+
+    // Theme Toggle
+    document.getElementById("toggleMode").addEventListener("click", () => {
+      const html = document.documentElement;
+      if (html.getAttribute("data-theme") === "night") {
+        html.removeAttribute("data-theme");
+      } else {
+        html.setAttribute("data-theme", "night");
+      }
+    });
+
+    // Back to Top
+    document.getElementById("backToTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Particle.js config
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        move: { speed: 1 },
+        line_linked: { enable: true },
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
